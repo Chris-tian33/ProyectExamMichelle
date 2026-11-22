@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda Viva | Eventos</title>
+  <link rel="stylesheet" href="Estilos/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio"><span class="brand-mark">AV</span> agenda<span>viva</span></a>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Tus Eventos De Preparatoria</p>
+        <h1> CETIS 101<br><em>Proximamente</em></h1>
+        <p>Encuentra talleres, encuentros y actividades. Elige lo que te interesa y reserva tu lugar en unos cuantos pasos.</p>
+        <a class="button button-light" href="#eventos">Ver agenda ↓</a>
+      </div>
+      <aside class="hero-note">
+        <span>AGENDA ABIERTA</span>
+        <strong>Experiencias Inolvidables<br>Y<br>Oportunidades unicas</strong>
+        <b aria-hidden="true">✳</b>
+      </aside>
+    </section>
+
+    <section class="content-section" id="eventos">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">DESCUBRE Y PARTICIPA</p>
+          <h2>Próximas actividades Escolares</h2>
+        </div>
+        <p>Una buena experiencia<br>puede empezar hoy.</p>
+      </div>
+
+      <div class="agenda-tools">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <span class="sr-only">Buscar actividad</span>
+          <input id="event-search" type="search" placeholder="Buscar por nombre...">
+        </label>
+        <div class="filters" aria-label="Filtrar actividades">
+          <button class="filter active" type="button" data-category="Todas">Todas</button>
+          <button class="filter" type="button" data-category="Arte">Arte</button>
+          <button class="filter" type="button" data-category="Aprendizaje">Aprendizaje</button>
+          <button class="filter" type="button" data-category="Deporte">Deporte</button>
+        </div>
+      </div>
+
+      <div class="event-list" id="event-list">
+        <article class="event-row" data-category="Arte" data-search="exposición fotografía galería">
+          <div class="date"><strong>06</strong><span>DIC</span></div>
+          <div class="symbol art">▧</div>
+          <div class="event-info">
+            <small>ARTE</small>
+            <h3>Teatro y Danza</h3>
+            <p>Una manera de expresar la cultura a través del teatro y la danza</p>
+          </div>
+          <div class="event-meta"><span>06 dic 2026</span><span>11:00 h · Auditorio</span></div>
+          <button class="register-button" type="button" data-event="Teatro y Danza">Quiero asistir →</button>
+        </article>
+
+        <article class="event-row" data-category="Aprendizaje" data-search="laboratorio ideas creatividad taller">
+          <div class="date"><strong>10</strong><span>DIC</span></div>
+          <div class="symbol learn">+</div>
+          <div class="event-info">
+            <small>APRENDIZAJE</small>
+            <h3>Concurso Matematico</h3>
+            <p>Taller para poner en practica tu conocimiento matematico</p>
+          </div>
+          <div class="event-meta"><span>10 dic 2026</span><span>09:30 h · Aula E1</span></div>
+          <button class="register-button" type="button" data-event="Concurso Matematico">Quiero asistir →</button>
+        </article>
+
+        <article class="event-row" data-category="Deporte" data-search="Actividad Deportiva convivencia voluntariado">
+          <div class="date"><strong>14</strong><span>DIC</span></div>
+          <div class="symbol community">♡</div>
+          <div class="event-info">
+            <small>DEPORTE</small>
+            <h3>Actividad Deportiva</h3>
+            <p>Un día para participar en actividades físicas y deportivas.</p>
+          </div>
+          <div class="event-meta"><span>14 dic 2026</span><span>10:00 h · Patio central</span></div>
+          <button class="register-button" type="button" data-event="Actividad Deportiva">Quiero asistir →</button>
+        </article>
+
+        <article class="event-row" data-category="Aprendizaje" data-search="charla tecnología futuro conferencia">
+          <div class="date"><strong>18</strong><span>DIC</span></div>
+          <div class="symbol tech">⌘</div>
+          <div class="event-info">
+            <small>APRENDIZAJE</small>
+            <h3>Programacion e ideas hacia el futuro</h3>
+            <p>Conversación sobre herramientas y nuevas oportunidades para estudiantes programadores</p>
+          </div>
+          <div class="event-meta"><span>18 dic 2026</span><span>12:00 h · Laboratorio 1 y 2</span></div>
+          <button class="register-button" type="button" data-event="Programacion e ideas hacia el futuro">Quiero asistir →</button>
+        </article>
+      </div>
+      <p class="empty-message" id="empty-message" hidden>No hay actividades que coincidan con tu búsqueda.</p>
+    </section>
+
+    <section class="registration-section" id="registro">
+      <div class="registration-layout">
+        <div class="registration-copy">
+          <p class="eyebrow">PARTICIPA YA! <br> ¡¿Que esperas?!</p>
+          <h2>Haz tu registro.</h2>
+          <p>Completa el formulario para dejar tus datos de participación. Los campos marcados son obligatorios.</p>
+          <div class="tip"><span>✳</span><p>Revisa la fecha y el lugar de la actividad antes de enviar tus datos.</p></div>
+        </div>
+
+        <form id="registration-form" novalidate>
+          <div class="form-title"><strong>FORMULARIO DE PARTICIPACIÓN</strong><span>01 / 01</span></div>
+
+          <label for="full-name">Nombre completo</label>
+          <input id="full-name" name="nombre" type="text" minlength="3" placeholder="Escribe tu nombre" required>
+
+          <div class="two-columns">
+            <div>
+              <label for="email">Correo electrónico</label>
+              <input id="email" name="correo" type="email" placeholder="correo@ejemplo.com" required>
+            </div>
+            <div>
+              <label for="phone">Teléfono</label>
+              <input id="phone" name="telefono" type="tel" pattern="[0-9 +()-]{8,}" placeholder="Tu teléfono" required>
+            </div>
+          </div>
+
+          <label for="event-choice">Actividad a la que asistirás</label>
+          <select id="event-choice" name="evento" required>
+            <option value="">Selecciona una actividad</option>
+            <option>Teatro y Danza</option>
+            <option</option>
+            <option>Actividad Deportiva</option>
+            <option>Programacion e ideas hacia el futuro</option>
+          </select>
+
+          <label for="comments">Comentario <span>(opcional)</span></label>
+          <textarea id="comments" name="comentario" rows="3" placeholder="¿Hay algo que debamos saber?"></textarea>
+
+          <button class="button button-dark" type="submit">Enviar registro ↗</button>
+          <p id="form-feedback" class="feedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="about content-section" id="acerca">
+      <p class="eyebrow">ACERCA DE AGENDA VIVA</p>
+      <h2>Participar también<br>es una forma de conectar y triunfar</h2>
+      <p>Agenda Viva es un proyecto escolar de ejemplo que reúne actividades en un solo sitio y facilita el registro de las personas interesadas.</p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#inicio"><span class="brand-mark">AV</span> agenda<span>viva</span></a>
+    <span>Integrantes: Roan Mora Carmen Michelle  -  Contreras Monrroy America Cristal</span>
+  </footer>
+  <script src="Estilos/script.js"></script>
+</body>
+</html>s

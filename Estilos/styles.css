@@ -1,0 +1,622 @@
+/* =====================================================
+   AGENDA VIVA - ESTILOS
+   Organización: variables, estructura, componentes y responsive
+   ===================================================== */
+
+/* 1. Variables generales */
+:root {
+  --ink: #292333;
+  --muted: #77717e;
+  --paper: #fbf9f6;
+  --white: #ffffff;
+  --plum: #49344f;
+  --coral: #e88d72;
+  --line: #e9e3df;
+  --sand: #f2e7d8;
+  --mint: #dcebe3;
+  --lavender: #eee6f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+.content-section,
+.registration-layout {
+  width: min(1120px, 90%);
+  margin-inline: auto;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--coral);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* 2. Encabezado */
+.site-header {
+  min-height: 78px;
+  padding: 12px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  justify-content: center;
+  gap: 24px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.brand > span:last-child,
+.brand > span:last-child span {
+  color: var(--coral);
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--coral);
+  color: var(--white);
+  font-size: 13px;
+  letter-spacing: 0;
+}
+
+.site-header nav {
+  display: flex;
+  gap: 30px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.site-header nav a:hover,
+.header-cta:hover {
+  color: var(--coral);
+}
+
+/* 3. Portada */
+.hero {
+  min-height: 440px;
+  padding: 65px max(5%, calc((100% - 1120px) / 2));
+  display: grid;
+  grid-template-columns: 1.4fr .8fr;
+  align-items: center;
+  gap: 50px;
+  background: var(--plum);
+  color: var(--white);
+}
+
+.hero h1 {
+  max-width: 650px;
+  margin: 0;
+  font-size: clamp(44px, 6vw, 72px);
+  line-height: 1.04;
+  letter-spacing: -3px;
+}
+
+.hero h1 em {
+  color: #f2a58d;
+  font-style: normal;
+}
+
+.hero-copy > p:not(.eyebrow) {
+  max-width: 480px;
+  margin: 22px 0 27px;
+  color: #e3dbe5;
+  font-size: 15px;
+}
+
+.button {
+  min-height: 46px;
+  padding: 11px 19px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 800;
+  transition: transform .16s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-light {
+  background: var(--white);
+  color: var(--plum);
+}
+
+.hero-note {
+  position: relative;
+  min-height: 250px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border: 1px solid #8b758e;
+  background: #57425d;
+}
+
+.hero-note > span {
+  color: #f3b39d;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero-note strong {
+  position: relative;
+  z-index: 1;
+  max-width: 260px;
+  font-family: Georgia, serif;
+  font-size: 31px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.hero-note b {
+  position: absolute;
+  right: 15px;
+  bottom: -20px;
+  color: #987d9c;
+  font-size: 110px;
+}
+
+/* 4. Agenda, búsqueda y filtros */
+.content-section {
+  padding-block: 80px 90px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.section-heading h2,
+.registration-copy h2,
+.about h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: clamp(32px, 4vw, 45px);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.section-heading > p {
+  margin: 0 0 5px;
+  color: var(--muted);
+  font-family: Georgia, serif;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.agenda-tools {
+  margin: 30px 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  min-width: 240px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #bdb4bc;
+  color: var(--plum);
+  font-size: 23px;
+}
+
+.search-box input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 13px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.filter {
+  padding: 8px 13px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.filter:hover,
+.filter.active {
+  border-color: var(--plum);
+  background: var(--plum);
+  color: var(--white);
+}
+
+/* 5. Eventos en formato de agenda */
+.event-list {
+  border-top: 1px solid var(--line);
+}
+
+.event-row {
+  min-height: 130px;
+  padding: 20px 5px;
+  display: grid;
+  grid-template-columns: 62px 58px minmax(190px, 1fr) 170px 135px;
+  align-items: center;
+  gap: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.event-row[hidden] {
+  display: none;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--plum);
+}
+
+.date strong {
+  font-family: Georgia, serif;
+  font-size: 31px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.date span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.symbol {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 26px;
+}
+
+.symbol.art { background: var(--lavender); color: #74567b; }
+.symbol.learn { background: var(--sand); color: #9a6c36; }
+.symbol.community { background: var(--mint); color: #4c7964; }
+.symbol.tech { background: #e6e8f3; color: #5d668d; }
+
+.event-info small {
+  color: var(--coral);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.event-info h3 {
+  margin: 2px 0 3px;
+  font-family: Georgia, serif;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.event-info p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.event-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.register-button {
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  color: var(--plum);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: right;
+}
+
+.register-button:hover {
+  color: var(--coral);
+}
+
+.empty-message {
+  padding: 25px 0;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* 6. Formulario */
+.registration-section {
+  padding-block: 78px;
+  background: var(--sand);
+}
+
+.registration-layout {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  align-items: start;
+  gap: 70px;
+}
+
+.registration-copy > p:not(.eyebrow) {
+  max-width: 390px;
+  color: #716a70;
+  font-size: 14px;
+}
+
+.tip {
+  max-width: 350px;
+  margin-top: 35px;
+  padding: 16px;
+  display: flex;
+  align-items: start;
+  gap: 13px;
+  border-left: 3px solid var(--coral);
+  background: #f8f1e9;
+}
+
+.tip span {
+  color: var(--coral);
+  font-size: 22px;
+}
+
+.tip p {
+  margin: 0;
+  color: #716a70;
+  font-size: 12px;
+}
+
+#registration-form {
+  padding: 30px;
+  background: var(--white);
+  box-shadow: 0 12px 35px #49344f0c;
+}
+
+.form-title {
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  color: var(--plum);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+#registration-form label {
+  margin: 15px 0 6px;
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+#registration-form label span {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+#registration-form input,
+#registration-form select,
+#registration-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  outline-color: var(--coral);
+  background: var(--white);
+  color: var(--ink);
+  font-size: 13px;
+}
+
+#registration-form textarea {
+  resize: vertical;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.button-dark {
+  width: 100%;
+  margin-top: 22px;
+  background: var(--plum);
+  color: var(--white);
+}
+
+.feedback {
+  min-height: 20px;
+  margin: 12px 0 0;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* 7. Información final y pie de página */
+.about {
+  text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 18px;
+}
+
+.about > p:last-child {
+  max-width: 570px;
+  margin-inline: auto;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+footer {
+  min-height: 85px;
+  padding: 20px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+}
+
+footer .brand {
+  color: var(--ink);
+  font-size: 16px;
+}
+
+/* 8. Accesibilidad y diseño adaptable */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .event-row {
+    grid-template-columns: 48px 48px minmax(150px, 1fr) 120px;
+  }
+
+  .event-meta {
+    display: none;
+  }
+
+  .registration-layout {
+    gap: 35px;
+  }
+}
+
+@media (max-width: 650px) {
+  .site-header {
+    flex-wrap: wrap;
+  }
+
+  .site-header nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-block: 48px;
+  }
+
+  .hero-note {
+    min-height: 190px;
+  }
+
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .event-row {
+    grid-template-columns: 45px 1fr auto;
+    gap: 12px;
+  }
+
+  .symbol {
+    display: none;
+  }
+
+  .event-info h3 {
+    font-size: 16px;
+  }
+
+  .event-info p {
+    font-size: 11px;
+  }
+
+  .register-button {
+    max-width: 90px;
+    font-size: 11px;
+  }
+
+  .registration-layout {
+    grid-template-columns: 1fr;
+  }
+
+  #registration-form {
+    padding: 22px;
+  }
+
+  .two-columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  footer {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
